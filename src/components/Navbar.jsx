@@ -8,8 +8,13 @@ export default function Navbar() {
         const el = document.getElementById(id);
         if (!el) return;
 
-        // Smoothly scroll the section into the vertical center of the viewport
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (mobileMenuIsOpen) {
+            // Smoothly scroll the section into the top of the viewport
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            // Smoothly scroll the section into the center of the viewport
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
 
         // Make element focusable, focus it after the animation, then remove tabindex
         // (improves keyboard/screen-reader UX)
@@ -24,8 +29,6 @@ export default function Navbar() {
         // close mobile menu if open
         setMobileMenuIsOpen(false);
 
-        // Optionally update URL hash without jumping:
-        // history.pushState(null, '', `#${id}`);
     };
     return <nav className="fixed top-0 w-full z-50 transition-all duration-300 bg-slate-700/20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

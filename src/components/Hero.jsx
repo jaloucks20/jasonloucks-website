@@ -158,9 +158,13 @@ export default function Hero() {
         const el = document.getElementById(id);
         if (!el) return;
 
-        // Smoothly scroll the section into the vertical center of the viewport
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
+        if (mobileMenuIsOpen) {
+            // Smoothly scroll the section into the top of the viewport
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            // Smoothly scroll the section into the center of the viewport
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
         // Make element focusable, focus it after the animation, then remove tabindex
         // (improves keyboard/screen-reader UX)
         const prevTab = el.getAttribute('tabindex');
