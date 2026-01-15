@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
@@ -7,17 +8,21 @@ import Contact from './components/Contact.jsx'
 
 function App() {
   return (
-    <title>Jason Loucks</title>,
-    
-    <div className="min-h-screen bg-[#060a2b] text-white overflow-hidden">
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Education />
-      <Contact />
-    </div>
+    <>
+      <Helmet>
+        <title>Jason Loucks</title>
+      </Helmet>
+
+      <div className="min-h-screen bg-[#060a2b] text-white overflow-hidden">
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <Education />
+        <Contact />
+      </div>
+    </>
   )
 }
 
-export default App
+export default App;
