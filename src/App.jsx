@@ -7,7 +7,7 @@ import Contact from './components/Contact.jsx'
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#050a38] text-white overflow-hidden">
+    <div className="min-h-screen bg-[#060a2b] text-white overflow-hidden">
       <Navbar />
       <Hero />
       <About />
