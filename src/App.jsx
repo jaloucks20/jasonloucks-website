@@ -7,6 +7,8 @@ import Contact from './components/Contact.jsx'
 
 function App() {
   return (
+    <title>Jason Loucks</title>,
+    
     <div className="min-h-screen bg-[#060a2b] text-white overflow-hidden">
       <Navbar />
       <Hero />
